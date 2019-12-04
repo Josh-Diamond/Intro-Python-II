@@ -1,5 +1,5 @@
 from room import Room
-
+from player import Player
 # Declare all the rooms
 
 room = {
@@ -36,9 +36,42 @@ room['treasure'].s_to = room['narrow']
 #
 # Main
 #
+def play(name):
+    global player
+    if player.current_room == None:
+        print("Oh no, you fell off the map. You can't go that way!")
+        quit()
+    else:
+        print("You are currently at the", player.current_room)
+        #print(player.current_room.description)
+
+        location = input("Where would you like to go?")
+        if location == "n":
+            player.current_room = player.current_room.n_to
+
+        elif location == "s":
+            player.current_room = player.current_room.s_to
+
+        elif location == "e":
+            player.current_room = player.current_room.e_to
+
+        elif location == "w":
+            player.current_room = player.current_room.w_to
+
+        elif location == "q":
+            quit()
 
 # Make a new player object that is currently in the 'outside' room.
 
+# Game
+name = input("What is your name?")
+player = Player(name)
+player.current_room = room['outside']
+playing = True
+print("Welcome to the Python Treasure game,", player.name)
+
+while playing:
+    play(name)
 # Write a loop that:
 #
 # * Prints the current room name

@@ -115,7 +115,7 @@ The `/src` directory contains the files `adv.py`, which is where the main logic 
 * Add the `i` and `inventory` commands that both show a list of items currently
   carried by the player.
 
-
+ 
 ## Stretch Goals
 
 In arbitrary order:

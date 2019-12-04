@@ -10,8 +10,9 @@ class Room:
         self.s_to = None
 
     def __repr__(self):
-        return f'Name: {self.name}, Description: {self.description}'
         # __repr__ is for debugging and development
+        return f'Name: {self.name}, Description: {self.description}'
+
     def __str__(self):
         # __str__ is for end user
         return f'{self.name} - {self.description}'

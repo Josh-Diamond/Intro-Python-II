@@ -63,7 +63,7 @@ def play(name):
 
 # Make a new player object that is currently in the 'outside' room.
 
-# Game
+# Game Start
 name = input("What is your name?")
 player = Player(name)
 player.current_room = room['outside']
